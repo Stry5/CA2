@@ -1,20 +1,38 @@
-// CA2.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+/*
+output:
+total sales
+state tax (dollars)
+county tax (dollars)
+tax paid (dollars)
+*/
 
 #include <iostream>
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	double NetProfit = 95000;
+	double STaxRate = 0.4;
+	double CTaxRate = 0.2;
+	double TotalTax, TotalSTax, TotalCTax, TotalProfit = NetProfit;
+
+	TotalSTax = NetProfit * STaxRate;
+	TotalCTax = NetProfit * CTaxRate;
+	TotalTax = TotalCTax + TotalSTax;
+	TotalProfit -= TotalTax;
+
+	cout << "Your net profit: +$" << NetProfit << endl;
+	cout << "Taxes owed to state:  -$" << TotalSTax << endl;
+	cout << "Taxes owed to county: -$" << TotalCTax << endl;
+	cout << "--------------------- " << endl;
+	cout << "Your total profit: =$" << TotalProfit << endl;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+/*
+output:
+Your net profit: +$95000
+Taxes owed to state:  -$38000
+Taxes owed to county: -$19000
+---------------------
+Your total profit: =$38000
+*/
